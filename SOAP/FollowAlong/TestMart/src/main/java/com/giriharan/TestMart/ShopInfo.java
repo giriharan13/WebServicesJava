@@ -17,8 +17,8 @@ public class ShopInfo {
 	
 	@WebMethod
 	@WebResult(partName="lookUpOutput") // @WebResult for specifying the wsdl name for output and @WebParam for input
-	public String getInfo(@WebParam(partName = "lookUpInput") String property) {
-		return infoService.getInfo(property);
+	public String getInfo(@WebParam(partName = "lookUpInput") String property) throws InvalidInputException {
+		return infoService.getInfo(property); 
 	}
 
 }

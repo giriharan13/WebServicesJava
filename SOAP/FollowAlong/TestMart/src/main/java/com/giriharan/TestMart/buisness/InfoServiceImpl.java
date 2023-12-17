@@ -1,14 +1,20 @@
 package com.giriharan.TestMart.buisness;
 
+import com.giriharan.TestMart.InvalidInputException;
+
 public class InfoServiceImpl {
 	
-	public String getInfo(String property) {
+	public String getInfo(String property) throws InvalidInputException {
+		String response;
 		if(property.equals("shopName")) {
-			return "Test Mart";
+			response = "Test Mart";
 		}
 		else if(property.equals("startYear")) {
-			return "2004";
+			response = "2004";
 		}
-		return null;
+		else {
+			throw new InvalidInputException("Invalid Property", property+"is not valid");
+		}
+		return response;
 	}
 }
